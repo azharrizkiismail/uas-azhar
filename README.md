@@ -1,6 +1,6 @@
 <div align="center">
 
-<h2> LAPORAN TUGAS UAS MATA KULIAH PEMROGRAMAN BERORIENTASI OBJEK</h2>
+<h2> LAPORAN TUGAS UAS PEMROGRAMAN BERORIENTASI OBJEK</h2>
 
 <h1>APLIKASI SISTEM RENTAL MOTOR BERBASIS DART MENGGUNAKAN KONSEP OBJECT ORIENTED PROGRAMMING (OOP)</h1>
 
@@ -29,7 +29,7 @@
 
 Perkembangan teknologi informasi telah memberikan banyak kemudahan dalam berbagai bidang, termasuk dalam pengelolaan data dan proses bisnis. Salah satu contohnya adalah usaha rental motor yang memerlukan pengelolaan data kendaraan, data pelanggan, serta proses penyewaan dan pengembalian kendaraan secara teratur. Pengelolaan yang masih dilakukan secara manual berpotensi menimbulkan kesalahan pencatatan dan kesulitan dalam memantau status kendaraan yang sedang disewa maupun yang tersedia.
 
-Dalam pengembangan perangkat lunak, konsep Object Oriented Programming (OOP) dapat digunakan untuk memodelkan objek-objek yang ada dalam dunia nyata ke dalam sebuah program. Melalui penerapan class, object, constructor, dan method, sistem dapat dibuat lebih terstruktur dan mudah dipahami. Oleh karena itu, pada proyek ini dibuat sebuah aplikasi sederhana Sistem Rental Motor menggunakan bahasa pemrograman Dart yang bertujuan untuk mengimplementasikan konsep-konsep dasar OOP melalui pengelolaan data motor, pelanggan, dan transaksi rental.
+Dalam pengembangan perangkat lunak, konsep Object Oriented Programming (OOP) dapat digunakan untuk memodelkan objek-objek yang ada dalam dunia nyata ke dalam sebuah program. Melalui penerapan class, object, constructor, dan method, sistem dapat dibuat lebih terstruktur dan mudah dipahami. Oleh karena itu, pada proyek ini dibuat sebuah aplikasi sederhana Sistem Rental Motor Berbasis Dart yang bertujuan untuk mengimplementasikan konsep-konsep dasar OOP melalui pengelolaan data motor, pelanggan, dan transaksi rental.
 
 ## 1.2. Rumusan Masalah
 
@@ -124,3 +124,179 @@ class Motor {
 }
 ```
 
+## 3.2. Class Pelanggan
+
+Class Pelanggan digunakan untuk menyimpan data pelanggan yang melakukan penyewaan motor. Selain menyimpan identitas pelanggan, class ini juga berfungsi untuk mengelola proses penyewaan dan pengembalian motor.
+
+```dart
+class Pelanggan {
+  String nama;
+  String idPelanggan;
+  int jumlahRental;
+
+  Pelanggan(
+    this.nama,
+    this.idPelanggan,
+    this.jumlahRental,
+  );
+
+  void tampilkanInfo() {
+    print("Nama Pelanggan : $nama");
+    print("ID Pelanggan   : $idPelanggan");
+  }
+
+  void sewaMotor(Motor motor) {
+    if (jumlahRental < 2) {
+      motor.sewaMotor();
+
+      if (!motor.tersedia) {
+        jumlahRental++;
+      }
+
+      print(
+        "Jumlah motor yang sedang disewa oleh $nama: $jumlahRental",
+      );
+    } else {
+      print(
+        "Maaf, $nama tidak bisa menyewa lebih dari 2 motor.",
+      );
+    }
+  }
+
+  void kembalikanMotor(Motor motor) {
+    motor.kembalikanMotor();
+
+    if (motor.tersedia) {
+      jumlahRental--;
+    }
+
+    print(
+      "Jumlah motor yang sedang disewa oleh $nama: $jumlahRental",
+    );
+  }
+}
+```
+
+## 3.3. Class Rental
+
+Class Rental digunakan untuk mencatat transaksi penyewaan motor. Data yang disimpan meliputi motor yang disewa, pelanggan yang menyewa, tanggal penyewaan, serta tanggal pengembalian.
+
+```dart
+class Rental {
+  Motor motor;
+  Pelanggan pelanggan;
+  DateTime tanggalSewa;
+  DateTime? tanggalKembali;
+
+  Rental(
+    this.motor,
+    this.pelanggan,
+    this.tanggalSewa,
+    this.tanggalKembali,
+  );
+
+  void tampilkanInfo() {
+    print("Motor             : ${motor.merk}");
+    print("Pelanggan         : ${pelanggan.nama}");
+    print("Tanggal Sewa      : $tanggalSewa");
+    print(
+      "Tanggal Kembali   : ${tanggalKembali ?? 'Belum Dikembalikan'}",
+    );
+  }
+
+  void selesaikanRental() {
+    if (tanggalKembali == null) {
+      tanggalKembali = DateTime.now();
+
+      print("Rental berhasil diselesaikan.");
+    } else {
+      print("Rental sudah selesai.");
+    }
+  }
+}
+```
+
+## 3.4. Main Program
+
+Main program berfungsi sebagai titik awal eksekusi aplikasi. Pada bagian ini dibuat beberapa objek motor, pelanggan, dan rental untuk mensimulasikan proses penyewaan dan pengembalian motor.
+
+```dart
+void main() {
+  Motor motor1 = Motor(
+    "Yamaha Aerox",
+    "ABS Connected",
+    "BG 2723 JBR",
+    true,
+  );
+
+  Motor motor2 = Motor(
+    "Honda Vario",
+    "160 CBS",
+    "BG 1234 XYZ",
+    true,
+  );
+
+  Pelanggan pelanggan1 = Pelanggan(
+    "Azhar Rizki",
+    "P001",
+    0,
+  );
+
+  Rental rental1 = Rental(
+    motor1,
+    pelanggan1,
+    DateTime.now(),
+    null,
+  );
+
+  print("\n--- Informasi Motor Awal ---");
+  motor1.tampilkanInfo();
+
+  print("\n--- Informasi Pelanggan Awal ---");
+  pelanggan1.tampilkanInfo();
+
+  print("\n--- Pelanggan Menyewa Motor ---");
+  pelanggan1.sewaMotor(motor1);
+
+  print("\n--- Informasi Motor Setelah Disewa ---");
+  motor1.tampilkanInfo();
+
+  print("\n--- Informasi Pelanggan Setelah Menyewa ---");
+  pelanggan1.tampilkanInfo();
+
+  pelanggan1.sewaMotor(motor2);
+
+  print("\n--- Pelanggan Mengembalikan Motor ---");
+  pelanggan1.kembalikanMotor(motor1);
+
+  print("\n--- Informasi Motor Setelah Dikembalikan ---");
+  motor1.tampilkanInfo();
+
+  print("\n--- Informasi Pelanggan Setelah Mengembalikan ---");
+  pelanggan1.tampilkanInfo();
+
+  print("\n--- Informasi Rental ---");
+  rental1.tampilkanInfo();
+
+  rental1.selesaikanRental();
+
+  print("\n--- Informasi Rental Setelah Selesai ---");
+  rental1.tampilkanInfo();
+}
+```
+
+---
+
+# Hasil Program
+
+Program berhasil dijalankan menggunakan website DartPad.dev dan menghasilkan output sesuai dengan fungsi yang telah dirancang. Output menampilkan informasi motor, data pelanggan, proses penyewaan motor, proses pengembalian motor, serta informasi transaksi rental yang telah dilakukan.
+
+<img width="910" height="962" alt="output koding uas" src="https://github.com/user-attachments/assets/413aac52-d9ff-49ca-b517-021315520d56" />
+
+---
+
+# Kesimpulan
+
+Berdasarkan hasil pembuatan aplikasi Sistem Rental Motor Berbasis Dart, dapat disimpulkan bahwa konsep Object Oriented Programming (OOP) dapat diterapkan dengan baik dalam pengembangan aplikasi sederhana. Melalui penggunaan class, object, constructor, dan method, data serta proses dalam sistem dapat dikelola secara lebih terstruktur. Aplikasi yang dibuat mampu mensimulasikan proses penyewaan dan pengembalian motor serta menunjukkan interaksi antar objek dalam sebuah program. Dengan demikian, proyek ini dapat menjadi contoh penerapan konsep OOP pada studi kasus rental motor.
+
+---
