@@ -23,7 +23,7 @@
 
 ---
 
-# Pendahuluan
+# 1. Pendahuluan
 
 ## 1.1. Latar Belakang
 
@@ -57,7 +57,7 @@ Manfaat yang diperoleh dari pembuatan aplikasi Sistem Rental Motor ini adalah se
 
 ---
 
-# Deskripsi Aplikasi
+# 2. Deskripsi Aplikasi
 
 Aplikasi Sistem Rental Motor merupakan aplikasi sederhana yang dibuat menggunakan bahasa pemrograman Dart dengan menerapkan konsep Object Oriented Programming (OOP). Aplikasi ini digunakan untuk mensimulasikan proses penyewaan motor yang melibatkan data motor, data pelanggan, serta transaksi rental. Setiap komponen dalam sistem direpresentasikan dalam bentuk class dan object yang saling berinteraksi untuk menjalankan fungsi-fungsi tertentu.
 
@@ -75,7 +75,7 @@ Aplikasi Sistem Rental Motor terdiri dari tiga class utama, yaitu Motor, Pelangg
 
 ---
 
-# Implementasi Program
+# 3. Implementasi Program
 
 Implementasi program dilakukan menggunakan bahasa pemrograman Dart dengan menerapkan konsep Object Oriented Programming (OOP). Pada aplikasi ini terdapat tiga class utama, yaitu Motor, Pelanggan, dan Rental. Setiap class memiliki atribut dan method yang digunakan untuk mengelola data serta menjalankan proses penyewaan motor.
 
@@ -287,7 +287,7 @@ void main() {
 
 ---
 
-# Hasil Program
+# 4. Hasil Program
 
 Program berhasil dijalankan menggunakan website DartPad.dev dan menghasilkan output sesuai dengan fungsi yang telah dirancang. Output menampilkan informasi motor, data pelanggan, proses penyewaan motor, proses pengembalian motor, serta informasi transaksi rental yang telah dilakukan.
 
@@ -295,7 +295,7 @@ Program berhasil dijalankan menggunakan website DartPad.dev dan menghasilkan out
 
 ---
 
-# Kesimpulan
+# 5. Kesimpulan
 
 Berdasarkan hasil pembuatan aplikasi Sistem Rental Motor Berbasis Dart, dapat disimpulkan bahwa konsep Object Oriented Programming (OOP) dapat diterapkan dengan baik dalam pengembangan aplikasi sederhana. Melalui penggunaan class, object, constructor, dan method, data serta proses dalam sistem dapat dikelola secara lebih terstruktur. Aplikasi yang dibuat mampu mensimulasikan proses penyewaan dan pengembalian motor serta menunjukkan interaksi antar objek dalam sebuah program. Dengan demikian, proyek ini dapat menjadi contoh penerapan konsep OOP pada studi kasus rental motor.
 
