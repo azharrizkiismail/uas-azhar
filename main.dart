@@ -1,4 +1,3 @@
-```dart
 class Motor {
   String merk;
   String tipe;
@@ -180,4 +179,3 @@ void main() {
   print("\n--- Informasi Rental Setelah Selesai ---");
   rental1.tampilkanInfo();
 }
-```
