@@ -73,6 +73,31 @@ Aplikasi Sistem Rental Motor terdiri dari tiga class utama, yaitu Motor, Pelangg
 | Pelanggan | Menyimpan data pelanggan yang melakukan penyewaan motor |
 | Rental | Menyimpan data transaksi rental seperti motor yang disewa, pelanggan, tanggal sewa, dan tanggal pengembalian |
 
+
+## 2.2. Class Diagram
+
+Class Diagram digunakan untuk menggambarkan struktur kelas yang terdapat pada aplikasi Sistem Rental Motor berbasis Dart. Diagram ini menunjukkan hubungan antar class beserta atribut dan method yang dimiliki oleh masing-masing class. Dengan adanya Class Diagram, rancangan sistem dapat dipahami dengan lebih mudah karena memperlihatkan bagaimana objek dalam program saling berinteraksi untuk menjalankan proses penyewaan dan pengembalian motor.
+
+<img width="1536" height="1024" alt="classdiagram uas pbo" src="https://github.com/user-attachments/assets/3e67a3c9-5680-43cb-adad-c72fadbbf320" />
+
+Berdasarkan Class Diagram pada Gambar diatas, terdapat tiga class utama yang digunakan dalam aplikasi yaitu class Motor, class Pelanggan, dan class Rental. Class Motor berfungsi untuk menyimpan informasi kendaraan yang dapat disewa, seperti merk, tipe, plat nomor, dan status ketersediaan motor. Selain itu, class ini memiliki beberapa method yang digunakan untuk menampilkan informasi motor, melakukan proses penyewaan, serta pengembalian motor.
+
+Class Pelanggan digunakan untuk menyimpan data pelanggan yang melakukan penyewaan motor. Class ini memiliki atribut berupa nama pelanggan, ID pelanggan, dan jumlah motor yang sedang disewa. Selain menyimpan data pelanggan, class ini juga memiliki method untuk melakukan proses penyewaan dan pengembalian motor dengan memanfaatkan objek dari class Motor.
+
+Sementara itu, class Rental digunakan untuk mencatat transaksi penyewaan yang terjadi. Class ini menghubungkan objek Motor dan Pelanggan serta menyimpan informasi tanggal penyewaan dan tanggal pengembalian. Hubungan antar class menunjukkan bahwa setiap transaksi rental melibatkan satu pelanggan dan satu motor sehingga seluruh proses penyewaan dapat dikelola secara terstruktur sesuai dengan konsep Object Oriented Programming (OOP).
+
+## 2.3. Flowchart
+
+Flowchart digunakan untuk menggambarkan alur proses yang terjadi pada aplikasi Sistem Rental Motor. Diagram ini menunjukkan urutan langkah-langkah yang dilakukan oleh sistem mulai dari inisialisasi data, proses penyewaan motor, proses pengembalian motor, hingga penyelesaian transaksi rental. Dengan adanya flowchart, logika program dapat dipahami dengan lebih mudah karena setiap proses dan keputusan digambarkan secara sistematis.
+
+<img width="1024" height="1536" alt="flowchart uas pbo" src="https://github.com/user-attachments/assets/69aeea69-c21c-4a66-9174-157908196821" />
+
+Berdasarkan flowchart diatas, proses dimulai dengan inisialisasi objek Motor, Pelanggan, dan Rental yang digunakan dalam program. Setelah data berhasil dibuat, sistem menampilkan informasi awal mengenai motor dan pelanggan sebelum pengguna memilih menu yang tersedia.
+
+Pada menu utama, pengguna dapat melakukan beberapa aktivitas seperti menyewa motor, mengembalikan motor, melihat informasi motor, melihat informasi pelanggan, dan melihat informasi rental. Ketika pelanggan memilih menu penyewaan motor, sistem akan memeriksa terlebih dahulu apakah motor masih tersedia untuk disewa. Jika tersedia, status motor akan berubah menjadi tidak tersedia dan jumlah rental pelanggan akan bertambah. Sebaliknya, jika motor tidak tersedia, sistem akan menampilkan pesan bahwa motor sedang digunakan.
+
+Selain proses penyewaan, sistem juga menyediakan proses pengembalian motor. Pada proses ini, sistem akan memeriksa apakah motor sedang disewa. Jika benar, status motor akan dikembalikan menjadi tersedia dan jumlah rental pelanggan akan berkurang. Setelah seluruh proses selesai, pengguna dapat memilih untuk mengakhiri program sehingga sistem akan menyelesaikan transaksi rental dan menampilkan informasi rental yang telah diperbarui sebelum program berakhir.
+
 ---
 
 # 3. Implementasi Program
