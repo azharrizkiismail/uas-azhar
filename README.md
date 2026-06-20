@@ -90,13 +90,11 @@ Sementara itu, class Rental digunakan untuk mencatat transaksi penyewaan yang te
 
 Flowchart digunakan untuk menggambarkan alur proses yang terjadi pada aplikasi Sistem Rental Motor. Diagram ini menunjukkan urutan langkah-langkah yang dilakukan oleh sistem mulai dari inisialisasi data, proses penyewaan motor, proses pengembalian motor, hingga penyelesaian transaksi rental. Dengan adanya flowchart, logika program dapat dipahami dengan lebih mudah karena setiap proses dan keputusan digambarkan secara sistematis.
 
-<img width="1024" height="1536" alt="flowchart uas pbo" src="https://github.com/user-attachments/assets/69aeea69-c21c-4a66-9174-157908196821" />
+<img width="1024" height="1536" alt="FLOWCHART" src="https://github.com/user-attachments/assets/346af620-a93d-4bf8-8acb-1a3bf2237988" />
 
-Berdasarkan flowchart diatas, proses dimulai dengan inisialisasi objek Motor, Pelanggan, dan Rental yang digunakan dalam program. Setelah data berhasil dibuat, sistem menampilkan informasi awal mengenai motor dan pelanggan sebelum pengguna memilih menu yang tersedia.
+Flowchart di atas menggambarkan alur kerja aplikasi Sistem Rental Motor yang dimulai dengan proses inisialisasi objek, yaitu objek Motor, Pelanggan, dan Rental. Setelah objek berhasil dibuat, sistem menampilkan informasi awal motor dan pelanggan. Selanjutnya pelanggan melakukan penyewaan motor pertama, kemudian sistem memeriksa apakah motor tersebut masih tersedia. Jika motor tersedia, proses penyewaan berhasil dilakukan dan jumlah rental pelanggan bertambah. Sebaliknya, jika motor tidak tersedia, sistem akan menampilkan pesan bahwa motor tidak dapat disewa.
 
-Pada menu utama, pengguna dapat melakukan beberapa aktivitas seperti menyewa motor, mengembalikan motor, melihat informasi motor, melihat informasi pelanggan, dan melihat informasi rental. Ketika pelanggan memilih menu penyewaan motor, sistem akan memeriksa terlebih dahulu apakah motor masih tersedia untuk disewa. Jika tersedia, status motor akan berubah menjadi tidak tersedia dan jumlah rental pelanggan akan bertambah. Sebaliknya, jika motor tidak tersedia, sistem akan menampilkan pesan bahwa motor sedang digunakan.
-
-Selain proses penyewaan, sistem juga menyediakan proses pengembalian motor. Pada proses ini, sistem akan memeriksa apakah motor sedang disewa. Jika benar, status motor akan dikembalikan menjadi tersedia dan jumlah rental pelanggan akan berkurang. Setelah seluruh proses selesai, pengguna dapat memilih untuk mengakhiri program sehingga sistem akan menyelesaikan transaksi rental dan menampilkan informasi rental yang telah diperbarui sebelum program berakhir.
+Setelah proses penyewaan pertama selesai, pelanggan dapat melakukan penyewaan motor kedua dengan syarat jumlah rental yang dimiliki masih kurang dari dua. Jika batas maksimal rental telah tercapai, sistem akan menampilkan pesan peringatan. Selanjutnya pelanggan dapat mengembalikan motor yang telah disewa sehingga jumlah rental berkurang dan status motor kembali tersedia. Setelah itu sistem menampilkan informasi rental, menyelesaikan transaksi dengan menetapkan tanggal pengembalian, lalu menampilkan informasi rental akhir sebagai bukti bahwa proses penyewaan telah selesai dilakukan.
 
 ---
 
